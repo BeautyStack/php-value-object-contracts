@@ -1,2 +1,4 @@
-# php-value-object-contracts
-Generic abstractions related to value objects
+PHP Value Object Contracts
+=============================
+
+A set of abstractions for value object in php

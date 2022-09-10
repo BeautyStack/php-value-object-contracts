@@ -1,0 +1,19 @@
+{
+    "name": "beautystack/php-value-object-contracts",
+    "description": "Generic abstractions related to value objects",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Beautystack\\Value\\Contracts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ken Lalobo"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
