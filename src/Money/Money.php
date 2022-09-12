@@ -13,7 +13,6 @@ use Doctrine\Common\Collections\Collection;
 
 interface Money extends ValueObjectInterface
 {
-
     public function format(): string;
 
     public function getAmount(): int;
