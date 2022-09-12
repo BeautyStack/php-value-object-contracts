@@ -1,22 +1,26 @@
 <?php
 
-/*
- * Copyright © 2017-present The Stack World. All rights reserved.
- */
-
 declare(strict_types=1);
 
 namespace Beautystack\Value\Contracts\DateTime;
 
-use JsonSerializable;
+use Beautystack\Value\Contracts\ValueObjectInterface;
 
-interface DateTime extends JsonSerializable
+interface DateTime extends ValueObjectInterface
 {
-    public function addInterval(int $seconds): self;
+    public function addInterval(int $seconds): DateTime;
 
-    public function removeInterval(int $seconds, self $dateTimeFrom = null): self;
+    public function removeInterval(int $seconds): DateTime;
 
-    public function format(string $format, ?string $timeZone): string;
+    public function firstDayOfLastMonth(Timezone $timezone, string $time = '00:00:00'): DateTime;
+
+    public function firstDayOfNextMonth(Timezone $timezone, string $time = '00:00:00'): DateTime;
+
+    public function lastDayOfThisMonth(Timezone $timezone, string $time = '00:00:00'): DateTime;
+
+    public function firstDayOfThisMonth(Timezone $timezone, string $time = '00:00:00'): DateTime;
+
+    public function format(string $format, Timezone $timeZone): string;
 
     public function toPhpDateTime(): \DateTime;
 
@@ -24,9 +28,11 @@ interface DateTime extends JsonSerializable
 
     public function getTimestamp() : int;
 
-    public function isBefore(self $compareDate, bool $inclusive = false): bool;
+    public function isBefore(DateTime $compareDate, bool $inclusive = false): bool;
 
-    public function isAfter(self $compareDate, bool $inclusive = false): bool;
+    public function isAfter(DateTime $compareDate, bool $inclusive = false): bool;
+
+    public function jsonSerialize(): string;
 
     public function __toString(): string;
 }

@@ -8,9 +8,10 @@ declare(strict_types=1);
 
 namespace Beautystack\Value\Contracts\Money;
 
+use Beautystack\Value\Contracts\ValueObjectInterface;
 use Doctrine\Common\Collections\Collection;
 
-interface Money
+interface Money extends ValueObjectInterface
 {
 
     public function format(): string;
@@ -29,4 +30,6 @@ interface Money
      * @return Collection<Money>
      */
     public function percent(int ...$percentages): Collection;
+
+    public function jsonSerialize() : array;
 }
