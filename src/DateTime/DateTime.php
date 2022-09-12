@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Beautystack\Value\Contracts\DateTime;
 
 use Beautystack\Value\Contracts\ValueObjectInterface;
+use Stringable;
 
-interface DateTime extends ValueObjectInterface
+interface DateTime extends ValueObjectInterface, Stringable
 {
     public function addInterval(int $seconds): DateTime;
 
@@ -34,5 +35,4 @@ interface DateTime extends ValueObjectInterface
 
     public function jsonSerialize(): string;
 
-    public function __toString(): string;
 }

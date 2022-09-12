@@ -4,7 +4,11 @@ namespace Beautystack\Value\Contracts\Money;
 
 use Beautystack\Value\Contracts\ValueObjectInterface;
 
-interface Currency extends ValueObjectInterface
+use Stringable;
+
+interface Currency extends ValueObjectInterface, Stringable
 {
     public function jsonSerialize() : string;
+
+    public function getValue() : string;
 }

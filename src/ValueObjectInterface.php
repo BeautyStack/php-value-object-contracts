@@ -7,4 +7,5 @@ use JsonSerializable;
 interface ValueObjectInterface extends JsonSerializable
 {
     public function isEqual(self $compareValueObject): bool;
+
 }
