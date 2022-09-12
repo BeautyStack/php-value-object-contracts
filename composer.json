@@ -1,5 +1,5 @@
 {
-    "name": "beautystack/php-value-object-contracts",
+    "name": "beautystack/value-object-contracts",
     "description": "Generic abstractions related to value objects",
     "type": "library",
     "license": "MIT",
