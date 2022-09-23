@@ -11,25 +11,24 @@ namespace Beautystack\Value\Contracts\Money;
 use Beautystack\Value\Contracts\ValueObjectInterface;
 use Doctrine\Common\Collections\Collection;
 
-interface Money extends ValueObjectInterface
+interface MoneyInterface extends ValueObjectInterface
 {
-
     public function format(): string;
 
     public function getAmount(): int;
 
-    public function getCurrency(): Currency;
+    public function getCurrency(): CurrencyInterface;
 
     public function toArray(): array;
 
-    public function subtract(Money $money): Money;
+    public function subtract(MoneyInterface $money): MoneyInterface;
 
-    public function add(Money $money): Money;
+    public function add(MoneyInterface $money): MoneyInterface;
 
     /**
-     * @return Collection<Money>
+     * @return Collection<MoneyInterface>
      */
     public function percent(int ...$percentages): Collection;
 
-    public function jsonSerialize() : array;
+    public function jsonSerialize(): array;
 }
