@@ -13,13 +13,5 @@ interface DateInterface extends ValueObjectInterface, Stringable
 
     public function toPhpDateTime(): \DateTime;
 
-    /**
-     * @return static
-     */
     public static function fromPhpDateTime(\DateTime $dateTime): self;
-
-    /**
-     * @return static
-     */
-    public static function fromNow(string $timezone = 'UTC'): self;
 }
